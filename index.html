@@ -16,33 +16,33 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f5f5f5;
+            background-color: #FDFDFD;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #6200ea;
-            color: white;
-            padding: 20px 0;
+            background-color: #131A22;
+            color: #FDFDFD;
+            padding: 30px 0;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
         }
 
         header p {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
         }
 
         .container {
             max-width: 1000px;
-            margin: 30px auto;
+            margin: 40px auto;
             background-color: white;
-            padding: 30px;
+            padding: 40px;
             border-radius: 8px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -52,9 +52,9 @@
         }
 
         .section h2 {
-            color: #333;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            color: #131A22;
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
 
         .section p {
@@ -64,30 +64,33 @@
         }
 
         .btn {
-            background-color: #6200ea;
+            background-color: #25D366;
             color: white;
             padding: 12px 20px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 500;
+            display: inline-block;
+            margin-top: 15px;
             transition: background-color 0.3s ease;
         }
 
         .btn:hover {
-            background-color: #3700b3;
+            background-color: #128C47;
         }
 
         .card {
             background-color: #f3f3f3;
-            padding: 15px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .card h3 {
             margin: 0;
-            font-size: 1.4rem;
+            font-size: 1.6rem;
+            color: #131A22;
         }
 
         .card p {
@@ -101,10 +104,13 @@
             color: #888;
             margin-top: 30px;
             padding-top: 20px;
+            background-color: #131A22;
+            color: white;
+            padding-bottom: 15px;
         }
 
         footer a {
-            color: #6200ea;
+            color: #25D366;
             text-decoration: none;
         }
 
@@ -114,12 +120,31 @@
 
         .icon {
             font-size: 30px;
+            color: #25D366;
             margin-right: 10px;
             vertical-align: middle;
         }
 
         .contact-info {
             margin-top: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            color: #131A22;
+            margin: 0 15px;
+            font-size: 35px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -136,19 +161,19 @@
             <h2>About WTools</h2>
             <p>WTools is a powerful and user-friendly tool designed to make your messaging and media management simpler and more efficient. With a range of features to enhance your communication and content management, this app offers:</p>
             <div class="card">
-                <h3>Direct Messaging</h3>
+                <h3><span class="material-icons">message</span>Direct Messaging</h3>
                 <p>Send messages directly to any contact without needing to save their number.</p>
             </div>
             <div class="card">
-                <h3>Video Trimmer</h3>
+                <h3><span class="material-icons">videocam</span>Video Trimmer</h3>
                 <p>Trim videos to the perfect length, ideal for sharing as status updates or keeping your clips concise.</p>
             </div>
             <div class="card">
-                <h3>Status Downloader</h3>
+                <h3><span class="material-icons">download</span>Status Downloader</h3>
                 <p>Effortlessly download images and videos shared as status updates and save them to your device for future use.</p>
             </div>
             <div class="card">
-                <h3>Media Manager</h3>
+                <h3><span class="material-icons">photo_library</span>Media Manager</h3>
                 <p>Organize and manage all your photos, videos, and media files with ease.</p>
             </div>
         </div>
@@ -170,6 +195,11 @@
 
     <footer>
         <p>&copy; 2024 WTools. All rights reserved. <br> Made with <span class="material-icons" style="color: red;">favorite</span> for you!</p>
+        <div class="social-icons">
+            <a href="https://twitter.com" target="_blank" class="material-icons">public</a>
+            <a href="https://facebook.com" target="_blank" class="material-icons">facebook</a>
+            <a href="https://instagram.com" target="_blank" class="material-icons">instagram</a>
+        </div>
     </footer>
 
 </body>
