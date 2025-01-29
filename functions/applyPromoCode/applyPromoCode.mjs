@@ -5,7 +5,20 @@ exports.handler = async function(event, context) {
     const API_URL = process.env.API_URL; // Your API URL (configured in Netlify environment settings)
     const API_KEY = process.env.API_KEY; // Your API Key (configured in Netlify environment settings)
 
-    const promoCode = JSON.parse(event.body).promoCode;
+   let promoCode;
+    try {
+        if (event.body) {
+            const parsedBody = JSON.parse(event.body);
+            promoCode = parsedBody.promoCode;
+        } else {
+            throw new Error('No promoCode in request body');
+        }
+    } catch (error) {
+        return {
+            statusCode: 400,
+            body: JSON.stringify({ success: false, message: 'Invalid JSON or missing promoCode' }),
+        };
+    }
 
     try {
         // Call the external API (e.g., Supabase, etc.)
