@@ -1,0 +1,9 @@
+[build]
+  publish = "public"  # The directory where your static files are located
+  functions = "netlify/functions"  # The directory where your Netlify functions are
+
+[[redirects]]
+  from = "/old-path"
+  to = "/new-path"
+  status = 301
+  force = true
