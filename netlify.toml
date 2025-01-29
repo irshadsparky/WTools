@@ -1,8 +1,2 @@
 [build]
-functions = "functions/applyPromoCodes"
-
-[[redirects]]
-  from = "/applyPromoCode"
-  to = "/.netlify/functions/applyPromoCode"
-  status = 200
-  force = true
+  functions = "functions"  # This tells Netlify where the functions are located
