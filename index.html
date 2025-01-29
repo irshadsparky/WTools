@@ -2,14 +2,16 @@
 <html lang="en">
 
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.0.0/dist/umd/supabase.min.js"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WTools - Developer Website</title>
-    
+
     <!-- Google Fonts for Material Design typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+
     <!-- Material Design Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -61,22 +63,6 @@
             color: #555;
             font-size: 1.1rem;
             line-height: 1.6;
-        }
-
-        .btn {
-            background-color: #25D366;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-block;
-            margin-top: 15px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #128C47;
         }
 
         .card {
@@ -146,7 +132,68 @@
         .social-icons a:hover {
             transform: scale(1.1);
         }
+
+        /* Promo Code Section */
+        #promo-code-input {
+            padding: 10px;
+            font-size: 1rem;
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        #apply-promo-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        #apply-promo-btn:hover {
+            background-color: #128C47;
+        }
+
+        #promo-status {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        #promo-container {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #promo-code-display {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #25D366;
+        }
+
+        #copy-btn {
+            background-color: #128C47;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 10px;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        #copy-btn:hover {
+            background-color: #0c6b30;
+        }
     </style>
+
 </head>
 
 <body>
@@ -157,31 +204,50 @@
     </header>
 
     <div class="container">
+        <!-- About WTools Section -->
         <div class="section">
             <h2>About WTools</h2>
             <p>WTools is a powerful and user-friendly tool designed to enhance your messaging and media management experience. It helps you stay on top of your communication while simplifying content management. Key features include:</p>
+            
             <div class="card">
-                <h3><span class="material-icons">message</span>Automatic Reply</h3>
+                <h3><span class="material-icons">message</span> Automatic Reply</h3>
                 <p>Set up custom triggers to send automatic responses based on keywords or exact matches. Perfect for staying connected even when you're busy!</p>
             </div>
+
             <div class="card">
-                <h3><span class="material-icons">message</span>Direct Messaging</h3>
+                <h3><span class="material-icons">message</span> Direct Messaging</h3>
                 <p>Send messages directly to any contact without needing to save their number.</p>
             </div>
+
             <div class="card">
-                <h3><span class="material-icons">videocam</span>Video Trimmer</h3>
+                <h3><span class="material-icons">videocam</span> Video Trimmer</h3>
                 <p>Trim videos to the perfect length, ideal for sharing as status updates or keeping your clips concise.</p>
             </div>
+
             <div class="card">
-                <h3><span class="material-icons">download</span>Status Downloader</h3>
+                <h3><span class="material-icons">download</span> Status Downloader</h3>
                 <p>Effortlessly download images and videos shared as status updates and save them to your device for future use.</p>
             </div>
+
             <div class="card">
-                <h3><span class="material-icons">photo_library</span>Media Manager</h3>
+                <h3><span class="material-icons">photo_library</span> Media Manager</h3>
                 <p>Organize and manage all your photos, videos, and media files with ease.</p>
             </div>
         </div>
 
+        <!-- Promo Code Section -->
+        <div class="section">
+            <h2>Apply Promo Code</h2>
+            <input type="text" id="promo-code-input" placeholder="Enter Promo Code">
+            <button id="apply-promo-btn">Apply Promo Code</button>
+            <p id="promo-status"></p>
+            <div id="promo-container">
+                <p>Promo Code: <span id="promo-code-display"></span></p>
+                <button id="copy-btn">Copy Code</button>
+            </div>
+        </div>
+
+        <!-- Contact Information Section -->
         <div class="section">
             <h2>Contact Information</h2>
             <p>If you have any questions or need support, feel free to contact us:</p>
@@ -191,6 +257,7 @@
             </div>
         </div>
 
+        <!-- Privacy Policy Section -->
         <div class="section">
             <h2>Privacy Policy</h2>
             <p>Your privacy is important to us. Please read our <a href="https://doc-hosting.flycricket.io/wtools-privacy-policy/657e4e14-f6ee-4fa9-a6d6-819234372747/privacy" target="_blank" class="btn">Privacy Policy</a> for more information.</p>
@@ -198,13 +265,57 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 WTools. All rights reserved. <br> Made with <span class="material-icons" style="color: red;">favorite</span> for you!</p>
+        <p>© 2025 WTools. All rights reserved. <br> Made with <span class="material-icons" style="color: red;">favorite</span> for you!</p>
         <div class="social-icons">
             <a href="https://twitter.com" target="_blank" class="material-icons">public</a>
             <a href="https://facebook.com" target="_blank" class="material-icons">facebook</a>
             <a href="https://instagram.com" target="_blank" class="material-icons">instagram</a>
         </div>
     </footer>
+
+    <script>
+       // Function to handle promo code submission
+document.getElementById('apply-promo-btn').addEventListener('click', async () => {
+    const promoCodeInput = document.getElementById('promo-code-input').value.trim();
+
+    if (!promoCodeInput) {
+        document.getElementById('promo-status').innerText = 'Please enter a promo code.';
+        document.getElementById('promo-status').classList.add('error');
+        return;
+    }
+
+    try {
+        // Call the Netlify function to validate and apply the promo code
+        const response = await fetch('/.netlify/functions/applyPromoCode', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ promoCode: promoCodeInput }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+            // Show the promo code to the user with an option to copy
+            document.getElementById('promo-status').innerText = 'Promo code applied successfully!';
+            document.getElementById('promo-status').classList.remove('error');
+            document.getElementById('promo-status').classList.add('success');
+            document.getElementById('promo-code-display').innerText = result.promoCode;
+            document.getElementById('promo-container').style.display = 'block';
+        } else {
+            document.getElementById('promo-status').innerText = result.message || 'Promo code is invalid or has already been used.';
+            document.getElementById('promo-status').classList.add('error');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('promo-status').innerText = 'There was an error applying the promo code.';
+        document.getElementById('promo-status').classList.add('error');
+    }
+});
+
+
+    </script>
 
 </body>
 
