@@ -237,12 +237,12 @@
 
         <!-- Promo Code Section -->
         <div class="section">
-            <h2>Apply Promo Code</h2>
+            <h2>Generate Subscription Promo Code</h2>
             <input type="text" id="promo-code-input" placeholder="Enter Promo Code">
-            <button id="apply-promo-btn">Apply Promo Code</button>
+            <button id="apply-promo-btn">Generate Promo Code</button>
             <p id="promo-status"></p>
             <div id="promo-container">
-                <p>Promo Code: <span id="promo-code-display"></span></p>
+                <p>Subscription Promo Code: <span id="promo-code-display"></span></p>
                 <button id="copy-btn">Copy Code</button>
             </div>
         </div>
@@ -298,7 +298,7 @@ document.getElementById('apply-promo-btn').addEventListener('click', async () =>
 
         if (response.ok && result.success) {
             // Show the promo code to the user with an option to copy
-            document.getElementById('promo-status').innerText = 'Promo code applied successfully!';
+            document.getElementById('promo-status').innerText = 'Subscription Promo Code Generated Successfully!';
             document.getElementById('promo-status').classList.remove('error');
             document.getElementById('promo-status').classList.add('success');
             document.getElementById('promo-code-display').innerText = result.promoCode;
@@ -320,9 +320,9 @@ document.getElementById('copy-btn').addEventListener('click', function() {
     // Use the clipboard API to copy the text
     if (promoCode) {
         navigator.clipboard.writeText(promoCode).then(function() {
-            alert('Promo code copied to clipboard!');
+            alert('Subscription Promo code copied to clipboard!');
         }).catch(function(error) {
-            console.error('Failed to copy promo code: ', error);
+            console.error('Failed to copy Subscription Promo Code: ', error);
         });
     } else {
         alert('No promo code available to copy.');
