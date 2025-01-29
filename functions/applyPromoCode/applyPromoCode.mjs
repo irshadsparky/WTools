@@ -5,6 +5,10 @@ exports.handler = async function(event, context) {
     const API_URL = process.env.API_URL; // Your API URL (configured in Netlify environment settings)
     const API_KEY = process.env.API_KEY; // Your API Key (configured in Netlify environment settings)
 
+  // Log the API URL and key to see if they're being fetched
+    console.log('API_URL:', API_URL);
+    console.log('API_KEY:', API_KEY);
+ 
    let promoCode;
     try {
         if (event.body) {
