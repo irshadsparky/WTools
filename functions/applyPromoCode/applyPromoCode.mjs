@@ -26,7 +26,7 @@ exports.handler = async function(event, context) {
 
     try {
         // Call the external API (e.g., Supabase, etc.)
-        const response = await fetch(`${API_URL}/rest/v1/promo_codes?promo_code=eq.${promoCode}`, {
+        const response = await fetch(`${API_URL}/rest/v1/promo_codes?actual_promo_code=eq.${promoCode}&used=eq.FALSE&select=*&limit=1`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
