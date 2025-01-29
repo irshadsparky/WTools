@@ -1,5 +1,5 @@
-// functions/applyPromoCode.js
-const fetch = require('node-fetch'); // You can install 'node-fetch' if not already available
+
+ // You can install 'node-fetch' if not already available
 
 exports.handler = async function(event, context) {
     const API_URL = process.env.API_URL; // Your API URL (configured in Netlify environment settings)
