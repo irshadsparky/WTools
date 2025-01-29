@@ -1,5 +1,5 @@
 [build]
-  publish = "public"  # The directory where your static files are located
+  publish = "/"  # Publish your root directory if there's no build process
   functions = "netlify/functions"  # The directory where your Netlify functions are
 
 [[redirects]]
