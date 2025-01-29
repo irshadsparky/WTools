@@ -26,7 +26,7 @@ exports.handler = async function(event, context) {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'apikey': API_KEY,
+                'apikey': `${API_KEY}`,
                 'Authorization': `Bearer ${API_KEY}`
             }
         });
