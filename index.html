@@ -286,7 +286,7 @@ document.getElementById('apply-promo-btn').addEventListener('click', async () =>
 
     try {
         // Call the Netlify function to validate and apply the promo code
-        const response = await fetch('/.netlify/functions/applyPromoCode/applyPromoCode', {
+        const response = await fetch('/.netlify/functions/applyPromoCode', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
