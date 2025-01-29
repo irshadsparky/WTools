@@ -314,7 +314,20 @@ document.getElementById('apply-promo-btn').addEventListener('click', async () =>
     }
 });
 
-
+document.getElementById('copy-btn').addEventListener('click', function() {
+    const promoCode = document.getElementById('promo-code-display').innerText;
+    
+    // Use the clipboard API to copy the text
+    if (promoCode) {
+        navigator.clipboard.writeText(promoCode).then(function() {
+            alert('Promo code copied to clipboard!');
+        }).catch(function(error) {
+            console.error('Failed to copy promo code: ', error);
+        });
+    } else {
+        alert('No promo code available to copy.');
+    }
+});
     </script>
 
 </body>
