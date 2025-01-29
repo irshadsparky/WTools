@@ -1,9 +1,8 @@
 [build]
-  publish = "/"  # Publish your root directory if there's no build process
-  functions = "netlify/functions"  # The directory where your Netlify functions are
+functions = "netlify/functions"
 
 [[redirects]]
-  from = "/old-path"
-  to = "/new-path"
-  status = 301
+  from = "/applyPromoCode"
+  to = "/.netlify/functions/applyPromoCode"
+  status = 200
   force = true
